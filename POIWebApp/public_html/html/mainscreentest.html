@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>POI</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css" crossorigin="anonymous">
+       
+    </head>
+    <body>
+        
+
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBoA4TiG_dFSsV3CNBYek9J6GTwcZurxw&callback=initMap">
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+
+        <div id="wrapper" class="container">
+    <div id="map_container"></div>
+    <div id="other_content"><h2 id="loc"></h2></div>
+</div>
+        <script> $.getScript('http://www.geoplugin.net/javascript.gp',function(){
+  
+	$('#loc').html("" + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+	$('#map_container').css("background-image","url(http://maps.google.com/maps/api/staticmap?center="+geoplugin_city()+","+geoplugin_region()+"&zoom=11&size=1024x768&scale=2&markers=color:red%7C"+geoplugin_latitude()+","+geoplugin_longitude()+"&maptype=terrain&sensor=true)");
+  
+});</script>
+
+    </body>
+</html>

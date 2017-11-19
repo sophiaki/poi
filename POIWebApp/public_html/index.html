@@ -1,75 +1,84 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>My App</title>
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Welcome to POI!</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
-    <!-- Only required for desktop -->
-    <link rel="stylesheet" href="/node_modules/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css" />
-
-    <!-- Always required -->
-    <link rel="stylesheet" href="/node_modules/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
-
-    <!-- Only required for desktop -->
-    <link rel="stylesheet" href="/node_modules/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css" />
-    
-    
-    
-    <script src="/node_modules/angular/angular.min.js"></script>
-    <script src="/node_modules/angular-route/angular-route.min.js"></script>
-    <script src="/node_modules/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
-    <script type="text/javascript">
-      angular.module('myApp', [
-        'ngRoute',
-        'mobile-angular-ui'
-      ]);
-    </script>
-    
-  </head>
-  <body ng-app="myApp">
-
-    <!-- Sidebars -->
-    <div class="sidebar sidebar-left"><!-- ... --></div>
-    <div class="sidebar sidebar-right"><!-- ... --></div>
-
-    <div class="app">
-      <div class="navbar navbar-app navbar-absolute-top"><!-- Top Navbar --></div>
-      <div class="navbar navbar-app navbar-absolute-bottom"><!-- Bottom Navbar --></div>
-
-      <!-- App body -->
-      <h1>Hello World</h1>
-
-      <div class='app-body'>
-        <div class='app-content'>
-            <ng-view>
-                <p id="demo">Click the button to get your position.</p>
-<button onclick="getLocation()">Try It</button>
-<div id="mapholder"></div>
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-if (navigator.geolocation) {
-navigator.geolocation.getCurrentPosition(showPosition, showError);
-} else {
-x.innerHTML = "Geolocation is not supported by this browser.";
-}}
-function showPosition(position) {
-var latlon = position.coords.latitude + "," +
-position.coords.longitude;
-var img_url =
-"https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
-document.getElementById("mapholder").innerHTML =
-"<img src='"+img_url+"'>";
-}
-function showError(error) {…}
-</script>
-            </ng-view>
-        </div>
-      </div>
-    </div><!-- ~ .app -->
-
-    <!-- Modals and Overlays -->
-    <div ui-yield-to="modals"></div>
-  </body>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
+    </head>
+    <body>
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="img/logo concept 1.png" alt="logo" style="max-width: 10%; max-height: 10%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="h1">POI</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    Already registered? Log in here.
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">                        
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Keep me signed in
+                            </label>
+                        </div>
+                        <a href="html/mainscreen.html" class="btn btn-primary">Log in</a>                      
+                    </form>
+                </div>
+                <div class="col"></div>
+            </div>
+            
+            <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                
+                <div class="col-6">
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Sign in with Facebook</button>
+                    <hr>
+                </div>
+                <div class="col"></div>
+            </div>
+                </div>
+            
+            <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    Not registered yet? Register <a href="html/register.html">here</a>.
+                </div>
+                <div class="col"></div>
+            </div>
+                </div>
+    </center>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
 </html>
