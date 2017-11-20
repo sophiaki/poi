@@ -1,0 +1,20 @@
+{
+    "elements": {},
+    "attributes": {
+        "colour": {
+            "context": "button"
+        },
+        "bgcolor": {
+            "context": "button"
+        },
+        "color": {
+            "context": "button"
+        },
+        "src": {
+            "context": "a"
+        },
+        "height": {
+            "context": "span"
+        }
+    }
+}

@@ -31,15 +31,26 @@
         </style>
     </head>
     <body>
-       
+
         <div class="container">
             <div class="row"></div>
             <div class="row">
-                <div class="col-md-3">
+
+                <div class="col-md-3" style="margin-top: 10px">
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu </button>
+                        <div class="dropdown-content">
+                            <a href="#">Food</a>
+                            <a href="#">Museums</a>
+                            <a href="#">Bowling</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 10px">
+
                     <center>
+
                         <div class="form-group has-feedback">
                             <input type="text" class="form-control" placeholder="Search" />
                             <i class="glyphicon glyphicon-search form-control-feedback"></i>
@@ -49,7 +60,7 @@
                 <div class="col-3"></div>
             </div>
         </div>
-     
+
 
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBoA4TiG_dFSsV3CNBYek9J6GTwcZurxw&callback=initMap">
@@ -59,9 +70,9 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"  crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"  crossorigin="anonymous"></script>
-        
-            <div id="map"></div>
-            
+
+        <div id="map"></div>
+
         <script>
                     function initMap() {
                         var uluru = {lat: -25.363, lng: 131.044};
