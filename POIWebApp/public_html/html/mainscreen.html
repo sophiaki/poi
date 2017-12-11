@@ -38,11 +38,14 @@
 
                 <div class="col-md-3" style="margin-top: 10px">
                     <div class="dropdown">
-                        <button class="dropbtn">Menu </button>
+                        <button class="dropbtn">What are you looking for?</button>
                         <div class="dropdown-content">
-                            <a href="#">Food</a>
-                            <a href="#">Museums</a>
-                            <a href="#">Bowling</a>
+                            <a href="http://localhost:8383/POIWebApp/html/mainscreen.html/">Food</a>
+                            <a href="#">Culture</a>
+                            <a href="#">Entertainment</a>
+                            <a href="#">Night Life</a>
+                            <a href="#">Hotels</a>
+                            <a href="#">Others</a>
                         </div>
                     </div>
                 </div>
@@ -79,46 +82,14 @@
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">-->
 
         <script>
-                    /**function initMap() {
+                    /** function initMap() {
+                     var uluru = {lat: 59.334591, lng: 18.063240};
                      var map = new google.maps.Map(document.getElementById('map'), {
-                     center: {lat: -34.397, lng: 150.644},
+                     center: uluru,
                      zoom: 13 //6
                      });
-                     //var infoWindow = new google.maps.InfoWindow({map: map});
                      
-                     // Try HTML5 geolocation. GET YOUR CURRENT LOCATION
-                     if (navigator.geolocation) {
-                     navigator.geolocation.getCurrentPosition(function (position) {
-                     var pos = {
-                     lat: position.coords.latitude,
-                     lng: position.coords.longitude
-                     };
-                     
-                     //infoWindow.setPosition(pos);
-                     
-                     //CODE FOR THE GOOGLE MARKERS
-                     var marker = new google.maps.Marker({
-                     position: pos,
-                     map: map
-                     });
-                     // infoWindow.setContent('Location found.');
-                     map.setCenter(pos);
-                     }, function () {
-                     handleLocationError(true, infoWindow, map.getCenter());
-                     });
-                     } else {
-                     // Browser doesn't support Geolocation
-                     handleLocationError(false, infoWindow, map.getCenter());
-                     }
-                     }
-                     
-                     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                     infoWindow.setPosition(pos);
-                     infoWindow.setContent(browserHasGeolocation ?
-                     'Error: The Geolocation service failed.' :
-                     'Error: Your browser doesn\'t support geolocation.');
                      }**/
-
                     //Search Bar's initials-searching-based functionality
                     function initAutocomplete() {
                         var map = new google.maps.Map(document.getElementById('map'), {
@@ -152,6 +123,30 @@
                             handleLocationError(false, infoWindow, map.getCenter());
                         }
 
+                        //Create and event double-clicking
+                        google.maps.event.addListener(map, 'dblclick', function (event) {
+                            placeMarker(event.latLng);
+                        });
+
+                        /**google.maps.event.addListener(marker, "dblclick", function (e) {
+                         log("Double Click");
+                         });**/
+
+                        //Add a marker to the location of the event
+                        function placeMarker(location) {
+                            var marker = new google.maps.Marker({
+                                position: location,
+                                map: map
+                            });
+                            //When marker is clicked the infowindow:
+                            var infowindow = new google.maps.InfoWindow({
+                                content: "<a href='../html/addpoi.html'>Add POI</a>"
+                            });
+
+                            google.maps.event.addListener(marker, 'click', function () {
+                                infowindow.open(map, marker);
+                            });
+                        }
                         // Create the search box and link it to the UI element.
                         var input = document.getElementById('pac-input');
                         var searchBox = new google.maps.places.SearchBox(input);
