@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add POI</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
+        <style>
+            html,body {margin:5px;padding:0}
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row"></div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <h3>Add POI</h3>
+                    </center> 
+                    <form>
+                        <div class="form-group">
+                            <label for="inputFirstName">Name</label>
+                            <input class="form-control" type="text" placeholder="Name of the POI or something indicative of the location">
+                        </div>
+                        <p>Type of POI:</p>
+                        <select>
+                            <optgroup label="">
+                                <option>Select</option>
+                            </optgroup>
+                            <optgroup label="Food">
+                                <option>Restaurant</option>
+                                <option>Coffe shop</option>
+                                <option>Pub/Bar</option>
+                            </optgroup>
+                            <optgroup label="Culture">
+                                <option>Museum</option>
+                                <option>Monument</option>
+                                <option>Exhibition</option>
+                                <option>Gallery</option>
+                                <option>Parks</option>
+                                <option>Aquarium</option>
+                                <option>Zoo</option>
+                            </optgroup>
+                            <optgroup label="Entertainment">
+                                <option>Cinema</option>
+                                <option>Concert</option>
+                                <option>Theater</option>
+                                <option>Bowling</option>
+                                <option>Theme Park</option>
+                                <option>Other</option>
+                            </optgroup>
+                            <optgroup label="Night Life">
+                                <option>Club</option>
+                                <option>Disco</option>
+                            </optgroup>
+                            <optgroup label="Hotels">
+                                <option>Hotel</option>
+                                <option>Motel</option>
+                                <option>Apartment</option>                                
+                            </optgroup>
+                            <optgroup label="Others">
+                                <option>Public Bathroom</option>
+                            </optgroup>
+                        </select>
+                        <p>Rating:</p>
+                        <input type="radio" name="rating" value="5"> 5 - OH MY GOD!<br>
+                        <input type="radio" name="rating" value="4"> 4 - worth it<br>
+                        <input type="radio" name="rating" value="3"> 3 - it was okay<br>
+                        <input type="radio" name="rating" value="2"> 2 - meh<br>
+                        <input type="radio" name="rating" value="1"> 1 - awful<br>
+                        <input type="radio" name="rating" value="0"> 0 - DON'T GO HERE, SERIOUSLY!<br>
+                        <p></p> <!-- this is the new line to leave a space in between -->
+                        <p>Comments:</p>
+                        <textarea name="comment" form="usrform">Enter text here...</textarea>
+                        <div class="form-group">
+                            <label for="inputFirstName">Enter link to POI webpage (if known)</label>
+                            <input class="form-control" type="text" placeholder="Link to webpage or facecbook page if known">
+                        </div>
+                        <center>                               
+                            <a href="../html/mainscreen.html" id="registerButton" class="btn btn-primary">Submit</a>
+                        </center>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
